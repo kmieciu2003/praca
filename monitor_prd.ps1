@@ -1,6 +1,7 @@
 cls
 Set-AzContext -Subscription 'da6b5497-ec65-44a3-a2d5-1457870f7073'
 $head = @"
+Stan na: "+(getdate).ToString('yyyy-MMdd HH:mm:ss.ms')+"
 
 <style>
     body
@@ -13,7 +14,7 @@ $head = @"
     }
 </style>
 "@
-cls
+cls 
 $rgName='otd-weu-p-sbn-rg'
 $nsName='otd-weu-p-sbn'
 [System.Collections.ArrayList]$tabelka=@()
@@ -25,3 +26,6 @@ foreach($queue in (Get-AzServiceBusQueue -ResourceGroupName $rgName -NamespaceNa
    $row=$null
 }
 $tabelka | ConvertTo-Html  -Title "error monitor" -PreContent $head |Out-File .\index.html
+git add .\index.html
+git commit -m (get-date)
+git push
