@@ -1,13 +1,46 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<title>2022-04-04 12:55:43.5543</title>
+<title>2022-04-04 13:01:28.128</title>
 </head><body>
 <style>
-.myDiv {
-    background-color: lightblue;
-    text-align: left;
-  }
+/* Split the screen in half */
+.split {
+  height: 100%;
+  width: 50%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+/* Control the left side */
+.left {
+  left: 0;
+  background-color: #111;
+}
+
+/* Control the right side */
+.right {
+  right: 0;
+  background-color: red;
+}
+
+/* If you want the content centered horizontally and vertically */
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+/* Style the image inside the centered container, if needed */
+.centered img {
+  width: 150px;
+  border-radius: 50%;
+}
     body
   {
       background-color: white;
@@ -19,7 +52,7 @@
   }
   tr:nth-child(even) {background-color: #f2f2f2;}
 </style>
-<div class="myDiv">
+<div class="split left">
 <h2>Produkcyjne kolejki *_ERROR</h2>
 
 <table>
