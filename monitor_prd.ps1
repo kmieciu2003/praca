@@ -1,4 +1,4 @@
-while ($true){
+#while ($true){
 cls
 Set-AzContext -Subscription 'da6b5497-ec65-44a3-a2d5-1457870f7073'
 $start = @"
@@ -65,4 +65,4 @@ git add .\index.html
 git commit -m (get-date)
 git push
 start-sleep -Seconds 300
-}
+#}
